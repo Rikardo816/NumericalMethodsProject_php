@@ -1,0 +1,100 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #37E2D5;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 800px;
+    background-image: url("math.webp");
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: 25rem;
+    font-family: 'Manjari', sans-serif;
+}
+
+header {
+    width: 1100px;
+    margin: 0px auto;
+    background:#06283D;
+    height: 100px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 1.5em;
+    padding: 5px 0px;
+
+}
+
+#container {
+    width: 1100px;
+    margin: 0px auto;
+    background: #DFF6FF;
+    position: relative;
+    bottom: 0;
+    text-align: center;    
+    height: 85%;
+    
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+ul {
+    padding: 25px;
+    list-style-type: circle;
+    list-style-position:inside;
+    /* border: 5px solid yellow; */
+    text-align: left;
+    display: grid;
+    place-content: center;
+}
+
+li {
+    padding: 5px;
+}
+
+
+#integrantes {
+    padding: 25px;
+    gap: 1.6em;
+    font-size: 1.25em;
+    /* border: 2px solid black; */
+}
+
+#metodos {
+    font-size: 1.25em;
+    display: grid;
+    place-content: center;
+    
+}
+
+a {
+    background-color: #1363DF;
+    border-radius: 5px;
+    padding: 0.5em;
+    border: 1px solid black;
+    color: #DFF6FF;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px #06283D;
+}
+
+a:hover {
+    box-shadow: 0 0 30px #DFF6FF;
+    color: black;
+}
+
+footer {
+    background: #47B5FF;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    width: 1100px;
+    margin: 0px auto;
+    position: absolute;
+    bottom: 0;
+}
