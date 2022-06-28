@@ -105,6 +105,13 @@ a:hover {
     padding: 10px;
 }
 
+#home {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    border: 2px solid yellow;
+}
+
 
 input {
     width: 100%;

@@ -13,7 +13,7 @@ namespace MathPHP\NumericalAnalysis\RootFinding;
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
-
+<script src="https://kit.fontawesome.com/a61aa2dc05.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -48,7 +48,8 @@ namespace MathPHP\NumericalAnalysis\RootFinding;
     echo "Resultado: " . $resultado;
 ?>
 </div>
-    <footer>
+
+<footer>
             Metodos Numéricos 2022A
         </footer>
 </div>
