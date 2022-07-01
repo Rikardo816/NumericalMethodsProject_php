@@ -3,7 +3,9 @@
 namespace MathPHP\NumericalAnalysis\RootFinding;
 
 require('Validation.php');
+require('../../Functions/Special.php');
 
+use MathPHP\Functions\Special;
 use MathPHP\Exception;
 
 /**
