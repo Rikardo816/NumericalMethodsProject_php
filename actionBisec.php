@@ -21,6 +21,15 @@ namespace MathPHP\NumericalAnalysis\RootFinding;
     </header>
     <div id="container">
         <div id="centro">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 <?php
     // namespace MathPHP\NumericalAnalysis\RootFinding;
 

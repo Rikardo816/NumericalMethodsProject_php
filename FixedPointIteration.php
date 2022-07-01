@@ -60,19 +60,6 @@ class FixedPointIteration
 
         return $p;
     }
-// YO JOSE GUZMAN HICE ESTO ^🥱
-    // public static function solve(callable $function, $a, $b, $p, $tol)
-    // {
-    //     self::validate($a, $b, $p, $tol);
-
-    //     do {
-    //         $g⟮p⟯ = $function($p);
-    //         $dif = \abs($g⟮p⟯ - $p);
-    //         $p   = $g⟮p⟯;
-    //     } while ($dif > $tol);
-
-    //     return $p;
-    // }
 
     /**
      * Verify the input arguments are valid for correct use of fixed point
@@ -90,19 +77,7 @@ class FixedPointIteration
      * @throws Exception\BadDataException if $a = $b
      * @throws Exception\OutOfBoundsException if either $p > $a or $p < $b return false
      */
-    // private static function validate($a, $b, $p, $tol)
-    // {
-    //     Validation::tolerance($tol);
-    //     Validation::interval($a, $b);
 
-    //     if ($a > $b) {
-    //         [$a, $b] = [$b, $a];
-    //     }
-
-    //     if ($p < $a || $p > $b) {
-    //         throw new Exception\OutOfBoundsException("Initial guess $p must be in [$a, $b].");
-    //     }
-    // }
     private static function validate(callable $function, $a, $b, $tol)
     {
         Validation::tolerance($tol);
