@@ -32,7 +32,6 @@ class FixedPointIteration
      *                           f(x) = 0 as g(x) = x
      * @param number   $a        The start of the interval which contains a root
      * @param number   $b        The end of the interval which contains a root
-     * @param number   $p        The initial guess of our root, in [$a, $b]
      * @param number   $tol      Tolerance; How close to the actual solution we would like.
 
      * @return number
@@ -40,18 +39,38 @@ class FixedPointIteration
      * @throws Exception\OutOfBoundsException
      * @throws Exception\BadDataException
      */
-    public static function solve(callable $function, $a, $b, $p, $tol)
+    public static function solve(callable $function, $a, $b, $tol)
     {
-        self::validate($a, $b, $p, $tol);
+        // Validate input arguments
+        self::validate($function, $a, $b, $tol);
 
         do {
-            $g⟮p⟯ = $function($p);
-            $dif = \abs($g⟮p⟯ - $p);
-            $p   = $g⟮p⟯;
+            $f⟮a⟯ = $function($a);
+            $p   = ($a + $b) / 2;     // construct the midpoint
+            $f⟮p⟯ = $function($p);
+            $dif = \abs($f⟮p⟯);       // the magnitude of our function at the midpoint
+            if (Special::sgn($f⟮p⟯) !== Special::sgn($f⟮a⟯)) {
+                $b = $p;            // the new endpoint is our original midpoint
+            } else {
+                $a = $p;            // the new start point is our original endpoint
+            }
         } while ($dif > $tol);
 
         return $p;
     }
+// YO JOSE GUZMAN HICE ESTO ^🥱
+    // public static function solve(callable $function, $a, $b, $p, $tol)
+    // {
+    //     self::validate($a, $b, $p, $tol);
+
+    //     do {
+    //         $g⟮p⟯ = $function($p);
+    //         $dif = \abs($g⟮p⟯ - $p);
+    //         $p   = $g⟮p⟯;
+    //     } while ($dif > $tol);
+
+    //     return $p;
+    // }
 
     /**
      * Verify the input arguments are valid for correct use of fixed point
@@ -60,26 +79,39 @@ class FixedPointIteration
      * an interval, so we throw an Exception. If $a > $b, we simply reverse them
      * as if the user input $b = $a and $a = $b so the new $a < $b.
      *
+     * @param Callable $function f(x) callback function
      * @param number   $a        The start of the interval which contains a root
      * @param number   $b        The end of the interval which contains a root
-     * @param number   $p        The initial guess of our root
      * @param number   $tol      Tolerance; How close to the actual solution we would like.
      *
      * @throws Exception\OutOfBoundsException if $tol (the tolerance) is negative
      * @throws Exception\BadDataException if $a = $b
      * @throws Exception\OutOfBoundsException if either $p > $a or $p < $b return false
      */
-    private static function validate($a, $b, $p, $tol)
+    // private static function validate($a, $b, $p, $tol)
+    // {
+    //     Validation::tolerance($tol);
+    //     Validation::interval($a, $b);
+
+    //     if ($a > $b) {
+    //         [$a, $b] = [$b, $a];
+    //     }
+
+    //     if ($p < $a || $p > $b) {
+    //         throw new Exception\OutOfBoundsException("Initial guess $p must be in [$a, $b].");
+    //     }
+    // }
+    private static function validate(callable $function, $a, $b, $tol)
     {
         Validation::tolerance($tol);
         Validation::interval($a, $b);
 
-        if ($a > $b) {
-            [$a, $b] = [$b, $a];
-        }
-
-        if ($p < $a || $p > $b) {
-            throw new Exception\OutOfBoundsException("Initial guess $p must be in [$a, $b].");
+        $f⟮a⟯ = $function($a);
+        $f⟮b⟯ = $function($b);
+        if (Special::sgn($f⟮a⟯) === Special::sgn($f⟮b⟯)) {
+            throw new Exception\BadDataException(
+                'Input function has the same sign at the start and end of the interval. Choose start and end points such that the function evaluated at those points has a different sign (one positive, one negative).'
+            );
         }
     }
 }
