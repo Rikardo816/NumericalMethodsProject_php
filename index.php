@@ -28,10 +28,10 @@
     </div>
 
     <div id="metodos">
-        <a href="indexBisec.php">Método Bisección</a><br><br>
-        <a href="indexFp.php">Método de punto fijo</a><br><br>
-        <a href="indexNewton.php">Método de Newton-Raphson</a><br><br>
-        <a href="indexSecant.php">Método de la secante</a><br><br>
+        <a href="indexBisec.php" class="indexlink">Método Bisección</a><br><br>
+        <a href="indexFp.php" class="indexlink">Método de punto fijo</a><br><br>
+        <a href="indexNewton.php" class="indexlink">Método de Newton-Raphson</a><br><br>
+        <a href="indexSecant.php" class="indexlink">Método de la secante</a><br><br>
 </div>
         <footer>
             Metodos Numéricos 2022A

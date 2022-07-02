@@ -55,6 +55,22 @@ namespace MathPHP\NumericalAnalysis\RootFinding;
     $resultado = BisectionMethod::solve($funcion, $a, $b, $tol);
 
     echo "<span class=\"resultado\"> Resultado: " . $resultado . "</span>";
+
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+
+    echo "<a href=\"index.php\"><span class=\"boton\"> Volver al menú</span></a>";
 ?>
 </div>
 
