@@ -127,3 +127,9 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+.resultado {
+    display: inline-block;
+    background-color: antiquewhite;
+    color: black;
+}
