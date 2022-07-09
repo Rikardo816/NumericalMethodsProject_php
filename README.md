@@ -14,3 +14,4 @@ Este proyecto se realizó con los siguientes integrantes:
 
 * Ricardo Terán
 * Isaac Reyes
+* Alejandra Oña
